@@ -12,7 +12,7 @@ router.route('/').get((req, res) => {
 router.route('/').post((req, res) => {
     const brand = req.body.brand
     const model = req.body.model
-    const price = Number(req.body.model)
+    const price = Number(req.body.price)
 
     const newCarmodel = new Carmodel({
         brand,
@@ -26,8 +26,8 @@ router.route('/').post((req, res) => {
 })
 
 // delete carmodel
-router.route('/:id').delete((req, res) => {
-    Carmodel.findById(req.params.id)
+router.route('/').delete((req, res) => {
+    Carmodel.findByIdAndDelete(req.body.id)
         .then(carmodel => res.status(200).json(carmodel))
         .catch(err => res.status(400).json('Error: ' + err))
 })

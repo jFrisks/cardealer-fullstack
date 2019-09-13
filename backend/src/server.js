@@ -21,7 +21,13 @@ connection.once('open', () => {
 
 //Loading routers to handle api requests
 const employeesRouter = require('./routes/employees.route')
+const carmodelsRouter = require('./routes/carmodels.route')
+const total_salesRouter = require('./routes/total_sales.route')
+const salesRouter = require('./routes/sales.route')
 app.use('/employees', employeesRouter)
+app.use('/carmodels', carmodelsRouter)
+app.use('/total_sales', total_salesRouter)
+app.use('/sales', salesRouter)
 
 //app start listening on server.
 app.listen(port, () => {

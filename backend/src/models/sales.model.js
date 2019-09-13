@@ -10,4 +10,4 @@ const salesSchema = new Schema({
 })
 
 const Sales = mongoose.model('Sales', salesSchema)
-module.export = Sales
+module.exports = Sales
