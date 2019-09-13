@@ -1,5 +1,5 @@
 const express = require('express')
-const cors = require('cors')
+//const cors = require('cors')
 const mongoose = require('mongoose')
 
 require('dotenv').config()
@@ -19,11 +19,9 @@ connection.once('open', () => {
     console.log('Mongoose MongoDB connection database established successfully')
 })
 
-// Loading routers. If user requests /something, show somethingRouter-file
-// const exercisesRouter = require('./routes/exercises')
-// const usersRouter = require('./routes/users')
-// app.use('/users', usersRouter)
-// app.use('/exercises', exercisesRouter)
+//Loading routers to handle api requests
+const employeesRouter = require('./routes/employees.route')
+app.use('/employees', employeesRouter)
 
 //app start listening on server.
 app.listen(port, () => {
