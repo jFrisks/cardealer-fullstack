@@ -16,8 +16,10 @@ function CarmodelCard(props) {
         <Card>
             <CardHeader
                 action={
-                    <IconButton aria-label="settings">
-                        <MoreVertIcon onClick={handleMoreClick}/>
+                    <>
+                        <IconButton aria-label="settings" onClick={handleMoreClick}>
+                            <MoreVertIcon />
+                        </IconButton>
                         <Menu
                             id="simple-menu"
                             anchorEl={anchorEl}
@@ -25,17 +27,20 @@ function CarmodelCard(props) {
                             open={Boolean(anchorEl)}
                             onClose={handleMenuClose}
                         >
-                            <MenuItem onClick={handleMenuClose}>Edit</MenuItem>
-                            <MenuItem onClick={handleMenuClose}>Delete</MenuItem>
+                            <MenuItem onClick={() => props.onEdit(handleMenuClose)}>Edit</MenuItem>
+                            <MenuItem onClick={props.onDelete}>Delete</MenuItem>
                         </Menu>
-                    </IconButton>
+                    </>
                 }
-                title="Volvo"
-                subheader="XC60"
+                title={props.data.brand}
+                subheader={props.data.model}
             />
             <CardContent>
                 <Typography variant="body2" color="textSecondary" component="p">
                     The XC60 has gone on to become Volvo's best-selling model, and the latest car will continue that trend. Like its big brother, the XC90, the XC60 takes a more comfort-oriented approach than its rivals, and that means it’s less dynamic than models like the Jaguar F-Pace and BMW X3.
+                </Typography>
+                <Typography variant="body2" color="textSecondary" component="p">
+                    Price: {props.data.price}
                 </Typography>
             </CardContent>
         </Card>
