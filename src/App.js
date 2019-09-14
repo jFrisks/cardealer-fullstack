@@ -14,7 +14,7 @@ function App() {
 	return (
 		<Router>
 			<Navbar title="TITLE"/>
-			<Route path="/" exact component={CarmodelsPage}/>
+			<Route path="/carmodels" exact component={CarmodelsPage}/>
 			<Route path="/employees" component={EmployeesPage}/>
 			<Route path="/user" component={UserPage}/>
 		</Router>

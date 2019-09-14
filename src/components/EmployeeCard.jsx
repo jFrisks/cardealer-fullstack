@@ -1,46 +1,32 @@
 import React from 'react'
-import { Card, CardHeader, CardContent, IconButton, Typography, Menu, MenuItem } from '@material-ui/core'
-import MoreVertIcon from '@material-ui/icons/MoreVert';
+import { Card, CardContent, Typography, CardActions, Button } from '@material-ui/core'
 
-function EmployeeCard(props) {
-    const [anchorEl, setAnchorEl] = React.useState(null);
-
-    function handleMoreClick(event) {
-        setAnchorEl(event.currentTarget);
-    }
-    function handleMenuClose() {
-        setAnchorEl(null);
-    }
-
-    return (
+function EmployeeCard() {
+    const bull = <span>•</span>;
+    return(
         <Card>
-            <CardHeader
-                action={
-                    <IconButton aria-label="settings">
-                        <MoreVertIcon onClick={handleMoreClick}/>
-                        <Menu
-                            id="simple-menu"
-                            anchorEl={anchorEl}
-                            keepMounted
-                            open={Boolean(anchorEl)}
-                            onClose={handleMenuClose}
-                        >
-                            <MenuItem onClick={handleMenuClose}>Edit</MenuItem>
-                            <MenuItem onClick={handleMenuClose}>Delete</MenuItem>
-                        </Menu>
-                    </IconButton>
-                }
-                title="Shrimp and Chorizo Paella"
-                subheader="September 14, 2016"
-            />
             <CardContent>
-                <Typography variant="body2" color="textSecondary" component="p">
-                    This impressive paella is a perfect party dish and a fun meal to cook together with your
-                    guests. Add 1 cup of frozen peas along with the mussels, if you like.
+                <Typography color="textSecondary" gutterBottom>
+                Word of the Day
+                </Typography>
+                <Typography variant="h5" component="h2">
+                be
+                {bull}
+                nev
+                {bull}o{bull}
+                lent
+                </Typography>
+                <Typography color="textSecondary">
+                adjective
+                </Typography>
+                <Typography variant="body2" component="p">
+                well meaning and kindly.
+                <br />
+                {'"a benevolent smile"'}
                 </Typography>
             </CardContent>
         </Card>
     )
 }
 
-export default EmployeeCard;
+export default EmployeeCard
