@@ -24,9 +24,9 @@ export default function ModifyUserDialog(props) {
     return (
         <>
             <Fab variant="extended" aria-label="delete" onClick={handleClickOpen}>
-                        <BuildIcon />
-                        Change Password or Username
-                    </Fab>
+                <BuildIcon />
+                Change Password or Username
+            </Fab>
             <Dialog open={open} onClose={handleClose} aria-labelledby="form-dialog-title">
                 <DialogTitle id="form-dialog-title">Modify Your User Info</DialogTitle>
                 <DialogContent>

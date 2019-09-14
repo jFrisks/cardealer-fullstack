@@ -14,10 +14,9 @@ class Navbar extends React.Component{
                     <Typography variant="h6">
                         {this.props.title}
                     </Typography>
-                    <Button color="inherit" Component={Link} to="/carmodels" >Carmodels</Button>
-                    <Button color="inherit" Component={Link} to="/employees" >Employees</Button>
-                    <Button color="inherit" Component={Link} to="/user">Users</Button>
-                    <Link to="/employees/" Component={Button}>HEJ</Link>
+                    <Button color="inherit" component={Link} to="/carmodels" >Carmodels</Button>
+                    <Button color="inherit" component={Link} to="/employees" >Employees</Button>
+                    <Button color="inherit" component={Link} to="/user">User</Button>
                 </Toolbar>
             </AppBar>
         )

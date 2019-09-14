@@ -2,27 +2,17 @@ import React from 'react'
 import { Card, CardContent, Typography, CardActions, Button } from '@material-ui/core'
 
 function EmployeeCard() {
-    const bull = <span>•</span>;
     return(
         <Card>
             <CardContent>
-                <Typography color="textSecondary" gutterBottom>
-                Word of the Day
-                </Typography>
                 <Typography variant="h5" component="h2">
-                be
-                {bull}
-                nev
-                {bull}o{bull}
-                lent
+                    Jonathan Frisk
                 </Typography>
-                <Typography color="textSecondary">
-                adjective
+                <Typography color="textSecondary" gutterBottom>
+                About
                 </Typography>
                 <Typography variant="body2" component="p">
-                well meaning and kindly.
-                <br />
-                {'"a benevolent smile"'}
+                He is selling like a God when he is on vaccation, strangely enough.
                 </Typography>
             </CardContent>
         </Card>

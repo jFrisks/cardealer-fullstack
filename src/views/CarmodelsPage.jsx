@@ -12,7 +12,7 @@ function CarmodelsPage(props) {
                     justify="center"
                 >
                     {[1, 2, 3, 4, 5, 6].map(() => (
-                        <Grid item xs={3}>
+                        <Grid item xs={12} lg={3} sm={6}>
                             <CarmodelCard />
                         </Grid>
                     ))}

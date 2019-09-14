@@ -30,13 +30,12 @@ function CarmodelCard(props) {
                         </Menu>
                     </IconButton>
                 }
-                title="Shrimp and Chorizo Paella"
-                subheader="September 14, 2016"
+                title="Volvo"
+                subheader="XC60"
             />
             <CardContent>
                 <Typography variant="body2" color="textSecondary" component="p">
-                    This impressive paella is a perfect party dish and a fun meal to cook together with your
-                    guests. Add 1 cup of frozen peas along with the mussels, if you like.
+                    The XC60 has gone on to become Volvo's best-selling model, and the latest car will continue that trend. Like its big brother, the XC90, the XC60 takes a more comfort-oriented approach than its rivals, and that means it’s less dynamic than models like the Jaguar F-Pace and BMW X3.
                 </Typography>
             </CardContent>
         </Card>
