@@ -1,7 +1,7 @@
 import React from 'react'
 import { Card, CardContent, Typography, CardActions, Button } from '@material-ui/core'
 
-function EmployeeCard() {
+function EmployeeCard(props) {
     return(
         <Card>
             <CardContent>
@@ -14,6 +14,7 @@ function EmployeeCard() {
                 <Typography variant="body2" component="p">
                 He is selling like a God when he is on vaccation, strangely enough.
                 </Typography>
+                {props.extra}
             </CardContent>
         </Card>
     )

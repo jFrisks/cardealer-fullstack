@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Car Dealer Vision",
+  "name": "App for cardealer to manage carmodels and employee's total sales",
   "icons": [
     {
       "src": "favicon.ico",
