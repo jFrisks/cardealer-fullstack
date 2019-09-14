@@ -13,7 +13,7 @@ import './App.css';
 function App() {
 	return (
 		<Router>
-			<Navbar />
+			<Navbar title="TITLE"/>
 			<Route path="/" exact component={CarmodelsPage}/>
 			<Route path="/employees" component={EmployeesPage}/>
 			<Route path="/user" component={UserPage}/>
