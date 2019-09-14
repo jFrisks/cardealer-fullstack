@@ -1,8 +1,8 @@
 import React from 'react'
 import EmployeeCard from '../components/EmployeeCard'
-import { Fab, Grid, Container } from '@material-ui/core'
+import { Grid, Container } from '@material-ui/core'
 
-import BuildIcon from '@material-ui/icons/Build'
+import ModifyUserDialog from '../components/ModifyUserDialog'
 
 function UserPage(props) {
     return (
@@ -19,10 +19,7 @@ function UserPage(props) {
                 </Grid>
                 
                 <Grid item xl={6}>
-                    <Fab variant="extended" aria-label="delete">
-                        <BuildIcon />
-                        Change Password or Username
-                    </Fab>
+                    <ModifyUserDialog />
                 </Grid>
             </Grid> 
         </Container>
