@@ -9,7 +9,7 @@ import { Typography } from '@material-ui/core';
 class Navbar extends React.Component{
     render(){
         return (
-            <AppBar position="static">
+            <AppBar position="sticky">
                 <Toolbar>
                     <Typography variant="h6">
                         {this.props.title}
