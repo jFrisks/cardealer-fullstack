@@ -1,68 +1,30 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was made as an case for fullstack interview with a 72 hours deadline. I learned MongoDB with mongoose, user auth in react together with firebase.
 
-## Available Scripts
+# BEFORE USING
+For safety reasons, as of now, you need to run a local server for demo to work. Instructions are provided below
+**[DEMO](https://cardealer-case.netlify.com/)**
 
-In the project directory, you can run:
+# Instructions
+## Download Project
+Firstly, download the projects zip-folder from my [GitHUB SOURCE](https://github.com/jFrisks/cardealer-fullstack)
+Place it in any directory on your computer.
 
-### `npm start`
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Install NODE
+If you don't have NODE installed, please [download](https://www.npmjs.com/get-npm) it and install it with the installer file.
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+### Do I have NODE?
+If you are not sure if you have installed node correctly, open up your terminal and run the commando **npm -v**
 
-### `npm test`
+## Prepare Project
+Open up your terminal and use the command **cd PROJECT_FOLDER_PATH** to get into the project. When in the folder **PROJECT_PATH/cardealer-fullstack/backend/src** write command **npm install** in the terminal. This will install all required dependencies for everything to work.
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Run Local Server
+When all dependencies are installed, we will start the server. Ensure you are in the **PROJECT_PATH/cardealer-fullstack/backend/src**. Run command **node server.js** to start the server. The terminal window will tell that "Server is up and running on port:  8080
+[...]"
 
-### `npm run build`
+We can now start the frontend client.
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+## Start the front end CLIENT
+In Chrome, open up **[DEMO](https://cardealer-case.netlify.com/)**
+You should hopefully see both the client running and see data

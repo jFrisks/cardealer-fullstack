@@ -7,7 +7,6 @@ import EmployeeCard from '../components/EmployeeCard'
 import { Grid, Container, Typography, Paper, Fab, Link, Button } from '@material-ui/core'
 
 import ModifyUserDialog from '../components/ModifyUserDialog'
-import total_sales from '../testData/total_sales'
 
 function UserPage(props) {
     const auth = useContext(AuthContext)

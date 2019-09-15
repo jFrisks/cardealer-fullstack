@@ -17,6 +17,7 @@ class EmployeesPage extends React.Component {
 
     async componentDidMount() {
         try{
+            console.log(CardealerAPIURL.employees)
             const response = await axios.get(CardealerAPIURL.employees)
             const employees = response.data
             this.setState({
