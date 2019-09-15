@@ -27,4 +27,10 @@ router.route('/').post((req, res) => {
         .catch(err => res.status(400).json('Error: ' + err))
 })
 
+router.route('/').get((req, res) => {
+    Sales.find()
+        .then(sales => res.status(200).json(sales))
+        .catch(err => res.status(400).json(err))
+})
+
 module.exports = router;
