@@ -1,11 +1,13 @@
 import React from 'react'
 import styled from 'styled-components'
+import axios from 'axios'
+
 import { Container, Grid, Fab } from '@material-ui/core'
 import CarmodelCard from '../components/CarmodelCard'
 import CarmodelAddDialog from '../components/CarmodelAddDialog'
 import AddIcon from '@material-ui/icons/Add';
 
-import carmodels from '../testData/carmodels'
+import CardealerAPIURL from '../data/CardealerAPI'
 
 const Hover = styled.div`
     position: fixed;
@@ -17,7 +19,7 @@ class CarmodelsPage extends React.Component{
         super(props)
 
         this.state = {
-            carmodels: carmodels,
+            carmodels: [],
             editOpen: false,
         }
 
@@ -27,8 +29,28 @@ class CarmodelsPage extends React.Component{
         this.handleSetEditOpen = this.handleSetEditOpen.bind(this)
     }
 
+    componentDidMount(){
+        this.getAndSetCarmodels()
+    }
+
+    getAndSetCarmodels() {
+        axios.get(CardealerAPIURL.carmodels)
+            .then(res => {
+                this.setState({
+                    carmodels: res.data
+                })
+            })
+            .catch(err => console.error(err))
+    }
+
     handleDelete(id){
         //delete req
+        const body = {
+            id
+        }
+        axios.delete(CardealerAPIURL.carmodels, { data: body })
+            .then(res => console.log('deleted carmodel:', res))
+            .catch(err => console.error(err))
 
         //delete locally
         this.setState({
@@ -54,14 +76,21 @@ class CarmodelsPage extends React.Component{
         })
     }
 
-    handleAdd(submission){
+    async handleAdd(submission){
         //add to real database. save return
+        try{
+            const resp = await axios.post(CardealerAPIURL.carmodels, submission)
+            const newCarmodel = resp.data
+             //const createdData = {...submission, id: this.state.carmodels.length*2+1}
 
-        const createdData = {...submission, id: this.state.carmodels.length*2+1}
-        this.setState(prev => ({
-            carmodels: [...prev.carmodels, createdData]
-        }))
-        this.handleSetEditOpen(false)
+            this.setState(prev => ({
+                carmodels: [...prev.carmodels, newCarmodel]
+            }))
+            this.handleSetEditOpen(false)
+            }
+        catch(e){
+            console.error(e)
+        }
     }
     
     render(){

@@ -3,6 +3,7 @@ import EmployeeCard from '../components/EmployeeCard'
 import { Grid, Container, Typography } from '@material-ui/core'
 
 import ModifyUserDialog from '../components/ModifyUserDialog'
+import total_sales from '../testData/total_sales'
 
 function UserPage(props) {
     return (
@@ -15,13 +16,13 @@ function UserPage(props) {
                 alignContent="center"
             >
                 <Grid item xs={12}>
-                    <EmployeeCard extra={
+                    <EmployeeCard data={total_sales} extra={
                         <>
                             <Typography color="textSecondary" gutterBottom>
                                 Sales
                             </Typography>
                             <Typography variant="h4" component="p">
-                                820 000 kr
+                                {total_sales.sales} kr
                             </Typography>
                         </>
                     }/>

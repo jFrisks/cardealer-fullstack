@@ -2,11 +2,13 @@ import React from 'react'
 import { Card, CardContent, Typography, CardActions, Button } from '@material-ui/core'
 
 function EmployeeCard(props) {
+    const {data, ...rest} = props;
+    const {name} = props.data;
     return(
         <Card>
             <CardContent>
                 <Typography variant="h5" component="h2">
-                    Jonathan Frisk
+                    {name}
                 </Typography>
                 <Typography color="textSecondary" gutterBottom>
                 About
