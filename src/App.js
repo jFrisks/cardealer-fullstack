@@ -1,7 +1,9 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {BrowserRouter as Router, Route} from 'react-router-dom'
 
 import Navbar from './components/Navbar'
+import UserLoginDialog from './components/User/UserLoginDialog'
+import UserRegisterDialog from './components/User/UserRegisterDialog'
 
 import CarmodelsPage from './views/CarmodelsPage'
 import EmployeesPage from './views/EmployeesPage'
@@ -13,10 +15,12 @@ import './App.css';
 function App() {
 	return (
 		<Router>
-			<Navbar title="TITLE"/>
+			<Navbar title="TITLE" />
 			<Route path="/carmodels" exact component={CarmodelsPage}/>
 			<Route path="/employees" component={EmployeesPage}/>
 			<Route path="/user" component={UserPage}/>
+			<Route path="/login" component={UserLoginDialog}/>
+			<Route path="/register" component={UserRegisterDialog}/>
 		</Router>
 	);
 }

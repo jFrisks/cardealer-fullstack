@@ -54,7 +54,7 @@ export default function ModifyUserDialog(props) {
                         Cancel
                     </Button>
                     <Button onClick={handleClose} color="primary">
-                        Subscribe
+                        Modify
                     </Button>
                 </DialogActions>
             </Dialog>
