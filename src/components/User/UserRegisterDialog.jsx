@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import firebase from '../firebase'
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
 import Dialog from '@material-ui/core/Dialog';
@@ -22,17 +23,27 @@ export default class UserRegisterDialog extends React.Component{
         this.handleSubmit = this.handleSubmit.bind(this)
     }
 
-    handleSubmit() {
+    async handleSubmit() {
         const sumbission = {
             password: this.state.password,
             email: this.state.email,
             name: this.state.name
         }
 
+        try{
+            const resp = await firebase.auth().createUserWithEmailAndPassword(this.state.email, this.state.password)
+            //TODO - add name parameter when registering
+            console.log('created user (without name) as: ', sumbission)
+            this.props.history.goBack()
+        }catch(e){
+            console.error(e)
+        }
+
         //TODO
         console.log('Wanted to register user with: ', sumbission)
         this.props.history.goBack()
     }
+
 
     handleChange(event, type) {
         //console.log('changed ' + type + ' to: ' + event.target.value)

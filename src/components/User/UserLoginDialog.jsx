@@ -1,6 +1,5 @@
 import React from 'react';
-import styled from 'styled-components';
-import firebase from '../firebase'
+import firebase from '../firebase.js'
 
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
@@ -23,17 +22,19 @@ export default class UserLoginDialog extends React.Component{
         this.handleSubmit = this.handleSubmit.bind(this)
     }
 
-    handleSubmit() {
+    async handleSubmit() {
         const sumbission = {
             password: this.state.password,
             email: this.state.email
         }
 
-        //TODO - add real log in
-
-        console.log('Wanted to log in user with: ', sumbission)
-        //if successful
-        this.props.history.goBack()
+        try{
+            await firebase.auth().signInWithEmailAndPassword(this.state.email, this.state.password)
+            console.log('Wanted to log in user with: ', sumbission)
+            this.props.history.goBack()
+        }catch(e){
+            console.error(e)
+        }
     }
 
     handleChange(event, type) {
