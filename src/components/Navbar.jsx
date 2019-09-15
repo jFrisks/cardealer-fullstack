@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import {Link} from 'react-router-dom'
+import firebase from './firebase'
 
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -35,6 +36,7 @@ class Navbar extends React.Component{
                     <RightFloat >
                         <Button color="inherit" component={Link} to="/register">Register</Button>
                         <Button color="secondary" component={Link} to="/login">Sign In</Button>
+                        <Button color="secondary" onClick={() => firebase.auth().signOut()}>Sign out</Button>
                     </RightFloat>
                 </StyledToolbar>
             </AppBar>

@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import {BrowserRouter as Router, Route} from 'react-router-dom'
 
+import {AuthProvider} from './components/Auth'
 import Navbar from './components/Navbar'
 import UserLoginDialog from './components/User/UserLoginDialog'
 import UserRegisterDialog from './components/User/UserRegisterDialog'
@@ -14,14 +15,16 @@ import './App.css';
 
 function App() {
 	return (
-		<Router>
-			<Navbar title="TITLE" />
-			<Route path="/carmodels" exact component={CarmodelsPage}/>
-			<Route path="/employees" component={EmployeesPage}/>
-			<Route path="/user" component={UserPage}/>
-			<Route path="/login" component={UserLoginDialog}/>
-			<Route path="/register" component={UserRegisterDialog}/>
-		</Router>
+		<AuthProvider>
+			<Router>
+				<Navbar title="TITLE" />
+				<Route path="/carmodels" exact component={CarmodelsPage}/>
+				<Route path="/employees" component={EmployeesPage}/>
+				<Route path="/user" component={UserPage}/>
+				<Route path="/login" component={UserLoginDialog}/>
+				<Route path="/register" component={UserRegisterDialog}/>
+			</Router>
+		</AuthProvider>
 	);
 }
 
