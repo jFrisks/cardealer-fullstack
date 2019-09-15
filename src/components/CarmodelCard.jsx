@@ -12,6 +12,7 @@ function CarmodelCard(props) {
         setAnchorEl(null);
     }
 
+    //For edit in more-menu: <MenuItem onClick={() => props.onEdit(handleMenuClose)}>Edit</MenuItem>
     return (
         <Card>
             <CardHeader
@@ -27,7 +28,6 @@ function CarmodelCard(props) {
                             open={Boolean(anchorEl)}
                             onClose={handleMenuClose}
                         >
-                            <MenuItem onClick={() => props.onEdit(handleMenuClose)}>Edit</MenuItem>
                             <MenuItem onClick={props.onDelete}>Delete</MenuItem>
                         </Menu>
                     </>

@@ -30,7 +30,6 @@ export default class UserLoginDialog extends React.Component{
 
         try{
             await firebase.auth().signInWithEmailAndPassword(this.state.email, this.state.password)
-            console.log('Wanted to log in user with: ', sumbission)
             this.props.history.goBack()
         }catch(e){
             console.error(e)

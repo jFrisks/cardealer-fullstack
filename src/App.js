@@ -17,7 +17,7 @@ function App() {
 	return (
 		<AuthProvider>
 			<Router>
-				<Navbar title="TITLE" />
+				<Navbar title="CAR DEALER" />
 				<Route path="/carmodels" exact component={CarmodelsPage}/>
 				<Route path="/employees" component={EmployeesPage}/>
 				<Route path="/user" component={UserPage}/>

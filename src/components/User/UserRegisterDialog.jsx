@@ -31,7 +31,11 @@ export default class UserRegisterDialog extends React.Component{
         }
 
         try{
-            const resp = await firebase.auth().createUserWithEmailAndPassword(this.state.email, this.state.password)
+            const usercred = await firebase.auth().createUserWithEmailAndPassword(this.state.email, this.state.password)
+            const user = usercred.user
+            await user.updateProfile({
+                displayName: this.state.name
+            })
             //TODO - add name parameter when registering
             console.log('created user (without name) as: ', sumbission)
             this.props.history.goBack()

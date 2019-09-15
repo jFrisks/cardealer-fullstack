@@ -1,4 +1,6 @@
-import React, {useContext} from 'react'
+import React, {useContext, useState, useEffect} from 'react'
+import axios from 'axios'
+import CardealerAPIURL from '../data/CardealerAPI'
 
 import {AuthContext} from '../components/Auth'
 import EmployeeCard from '../components/EmployeeCard'
@@ -9,16 +11,30 @@ import total_sales from '../testData/total_sales'
 
 function UserPage(props) {
     const auth = useContext(AuthContext)
+    const [employee, setEmployee] = useState(null)
+
+    useEffect(() => {
+        getEmployeeWithSales()
+    })
+    function getEmployeeWithSales(){
+        axios.get(CardealerAPIURL.total_sales)
+            .then(res => {
+                const employee = res.data.find(employee => employee.name === auth.currentUser.displayName)
+                setEmployee(employee)
+            })
+            .catch(err => console.error(err))
+        
+    }
 
     function renderGuestOrEmployee(){
-        return auth.currentUser ? (
-            <EmployeeCard data={total_sales} extra={
+        return auth.currentUser && employee ? (
+            <EmployeeCard data={employee} extra={
                 <>
                     <Typography color="textSecondary" gutterBottom>
                         Sales
                     </Typography>
                     <Typography variant="h4" component="p">
-                        {total_sales.sales} kr
+                        {employee.sales} kr
                     </Typography>
                 </>
             }/>
@@ -35,19 +51,6 @@ function UserPage(props) {
         
     }
 
-    function renderLoginOrModify(){
-        return (
-            auth.currentUser ? (
-                <>
-                    <ModifyUserDialog />
-                    <Typography color="textSecondary" gutterBottom>
-                        {auth.currentUser ? 'logged in with ' + auth.currentUser.email : 'Not logged in'}
-                    </Typography>
-                </>
-            ) : (<></>)
-        )
-    }
-
     return (
         <Container>
             <Grid
@@ -59,10 +62,6 @@ function UserPage(props) {
             >
                 <Grid item xs={12}>
                     {renderGuestOrEmployee()}
-                </Grid>
-                
-                <Grid item xl={6}>
-                    {renderLoginOrModify()}
                 </Grid>
             </Grid> 
         </Container>
