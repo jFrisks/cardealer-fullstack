@@ -75,7 +75,7 @@ export default class UserLoginDialog extends React.Component{
                             Cancel
                         </Button>
                         <Button onClick={this.handleSubmit} color="primary">
-                            Login
+                            Sign In
                         </Button>
                     </DialogActions>
                 </Dialog>
